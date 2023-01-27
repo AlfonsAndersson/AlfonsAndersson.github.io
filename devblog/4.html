@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="../_app/immutable/assets/_layout-8003c18b.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/start-4203deec.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index-930291f4.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/singletons-38def57f.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/preload-helper-41c905a7.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/_layout.svelte-c7d89e41.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/_layout.js-9cbb603b.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_layout-da46b06b.js">
+		<link rel="modulepreload" href="../_app/immutable/components/pages/devblog/_path_/_page.svelte-0954f2e5.js">
+		<link rel="modulepreload" href="../_app/immutable/modules/pages/devblog/_path_/_page.js-bc52e16c.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/_page-0c7a873b.js"><!-- HEAD_svelte-1lc4dl3_START --><link rel="stylesheet" href="/pico.min.css"><style>nav {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  </style><!-- HEAD_svelte-1lc4dl3_END -->
+	</head>
+	<body>
+		<div style="display: contents">
+
+
+
+
+<nav><ul><li><a href="/">Hem</a></li>
+    <li><a href="/devblog">Blog</a></li></ul></nav>
+
+<main class="container-fluid"><hr>
+
+  <main class="container">
+
+
+<article><h1>Tisdag</h1>
+  <p>Published: 2023-1-24</p>
+  <p>Idag har jag ändrat så att det förekommer olika bilder på workers och doubler, detta genom att skapa ett id som ger
+ut rätt länk till bilden.</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>button
+          <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upgrade"</span> id<span class="token operator">=</span><span class="token punctuation">&#123;</span>upgrade<span class="token punctuation">.</span>name<span class="token punctuation">&#125;</span>
+___________________________________________________________
+
+ #Worker <span class="token punctuation">&#123;</span>
+    background<span class="token operator">-</span>image<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">"https://media.gettyimages.com/id/1350537627/sv/foto/a-pug-dressed-as-a-construction-worker-is-seen-at-the-haute-dog-howloween-parade-at-marina.jpg?s=612x612&amp;w=gi&amp;k=20&amp;c=2NA8EiVUK6PF_iu4Av5huhX-YgRicsAFF_5m5jtwnfg="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+  <span class="token punctuation">&#125;</span>
+
+  #Doubler <span class="token punctuation">&#123;</span>
+    background<span class="token operator">-</span>image<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token string">"https://i.pinimg.com/originals/76/c1/b4/76c1b4b85ef3f91808dbf0f1dfa02d7b.jpg"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    background<span class="token operator">-</span>size<span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span> <span class="token number">170</span><span class="token operator">%</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Både jag och Anton fick i början hjälp av Tobias, han visade oss vad detta id var och hur programmet först tar
+information från id och sedan från class i detta fall. Detta funkade inte i början och vi försökte lista ut varför.
+Med hjälp av Lisas hjälp upptäckte vi att det bara var lite enkal fel i koden med några missplacerade citattecken och
+accenter som gav ett error.</p>
+<p>Jag har även ändrat och lärt mig hur man ska justera “boxerna” för upgrades med hjälp av Lisa och hemsidan: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox" rel="nofollow">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Typical_Use_Cases_of_Flexbox</a>
+Jag skapade en ny class som heter “grid”, denna använder jag för att justera och skapa en flexbox och få mina upgrades att se bra ut.</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"> <span class="token punctuation">.</span>grid <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">display</span><span class="token operator">:</span>flex<span class="token punctuation">;</span>
+    <span class="token literal-property property">height</span><span class="token operator">:</span> 170px<span class="token punctuation">;</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
+    flex<span class="token operator">-</span>direction<span class="token operator">:</span> row<span class="token punctuation">;</span>
+    justify<span class="token operator">-</span>self<span class="token operator">:</span> center<span class="token punctuation">;</span>
+    align<span class="token operator">-</span>items<span class="token operator">:</span> center<span class="token punctuation">;</span>
+    align<span class="token operator">-</span>self<span class="token operator">:</span> center<span class="token punctuation">;</span>
+    justify<span class="token operator">-</span>content<span class="token operator">:</span> space<span class="token operator">-</span>evenly<span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Jag skapaden den genom att sätta display till felx, sedan gav jag den en höjd och bredd och styrde med hjäl av
+flex-direction:row så att den skulle placera de olika knapparna på en rad med jämnt mellanrum.</p></article></main></main>
+
+
+		<script type="module" data-sveltekit-hydrate="14axp9m">
+			import { start } from "../_app/immutable/start-4203deec.js";
+
+			start({
+				env: {},
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="14axp9m"]').parentNode,
+				version: "1674816698031",
+				hydrate: {
+					node_ids: [0, 4],
+					data: [null,null],
+					form: null
+				}
+			});
+		</script>
+	</div>
+	</body>
+</html>
