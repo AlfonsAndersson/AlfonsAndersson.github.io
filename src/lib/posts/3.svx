@@ -1,18 +1,21 @@
 ---
-title: Post four
-date: "2021-12-14"
+title: Fredag
+date: "2023-1-20"
 ---
 
 <script>
  let a = 0;
 </script>
 
-Hello, I am _Post One._
-
-**Nice to meet tjena!**
-
-**sick**
-    
+Denna lektion har jag byt ut min clicker till en rektangel genom att skriva om stylen för clicker:
+```ccs
+.clicker {
+    height: 100%;
+    width: 60%;
+    background-color: rgb(203, 36, 36);
+```
+Och massa mer.
 <h1>{a}</h1>
 
 <button on:click={()=>{a = a + 1}}>CLICK ME</button>
+<button on:click={()=>{a = a - 1}}>DO NOT CLICK ME</button>

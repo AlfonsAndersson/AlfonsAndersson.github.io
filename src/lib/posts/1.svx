@@ -1,15 +1,30 @@
 ---
-title: Post One
-date: "2021-12-14"
+title: Tisdag
+date: "2023-1-17"
 ---
 
 <script>
  let a = 0;
 </script>
 
-Hello, I am _Post One._
-
-**Nice to meet you!**
+Idag har jag ändrat färgen för upgrades borders och bilden för dem,
+även position och storlek så det ser ok ut:
+```js
+.upgrade {
+    width: 100%;
+    height: 100%;
+    border: 7px solid rgb(58, 175, 0);
+    background-color: rgb(54, 28, 183);
+    background-size: 80% 120%;
+    background-image: url("https://media.gettyimages.com/id/1350537627/sv/foto/a-pug-dressed-as-a-construction-worker-is-seen-at-the-haute-dog-howloween-parade-at-marina.jpg?s=612x612&w=gi&k=20&c=2NA8EiVUK6PF_iu4Av5huhX-YgRicsAFF_5m5jtwnfg=");
+    background-position: center;
+    place-items: right;
+```
+Jag har också ändrat bilden på både "kakan" och upgrades till en Pug:
+```js
+ background-image: url("https://c.files.bbci.co.uk/17444/production/_124800359_gettyimages-817514614.jpg");
+ background-size: 75%;
+```
 
 **sick**
 
